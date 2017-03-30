@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<view class="container" style="height: 100%;">
+
+  <!--list-start-->
+
+<block wx:if="{{showLoading}}">
+  <view class="page-loading">
+    <text class="weui-loading"/><text class="loading-text">玩命加载中</text>
+  </view>
+</block>
+<block wx:else>
+  <scroll-view scroll-y="true" style="height: 100%;" 
+  bindscrolltolower="{{hasMore ? 'loadMore' : ''}}" lower-threshold="10"  class="film-list" >
+    <block wx:for-items="{{list}}" wx:for-item="item">
+      <view class="film-item" bindtap="bindViewTap" data-path="{{item.path}}">
+        <view class="film-image">
+          <image src="{{item.path}}"></image>
+        </view>
+        <view class="film-info">
+          <view>
+            <text class="film-title">{{item.name}}</text>
+          </view>
+          <view class="directors">
+            <text class="label film-year">{{item.add_time}}</text>
+          </view>
+        </view> 
+        
+      </view>
+    </block>
+    <view class="load-more-wrap">
+      <block wx:if="{{hasMore}}">
+        <view class="load-content">
+          <text class="weui-loading"/><text class="loading-text">玩命加载中</text>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="load-content">
+          <text>没有更多内容了</text>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</block>
+
+  <!--list-end-->
+
+</view>

@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#268dcd",
+    "navigationBarTitleText": "表趣",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
+  },
+  "debug": true
+}
